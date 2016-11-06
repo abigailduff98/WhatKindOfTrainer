@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head><title>Trainer Story</title>
+<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+<style>
+body{
+    background: url("img/background.jpg");
+    background-repeat: repeat;
+}
+
+#title {
+	font-family: "Luckiest Guy";
+	color: gray;
+	width: 550px;
+	margin: auto;
+	background-color: white;
+	border: 1px solid gray;
+	padding: 10px;
+	text-align: center;
+}
+
+#story {
+	background-color: white;
+	color: gray;
+	margin-left:20px;
+	border: 1px solid gray;
+	padding: 10px;
+	font-size: 20px;
+}
+</style>
+<script>
+
+	var starterPokemon;
+	var startingTown;
+	var trainerGoal;
+	var starterNature;
+
+	var pokemonList = ["Bulbasaur", "Charmander", "Squirtle", "Caterpie", "Weedle", "Pidgey", "Rattata", "Spearow", "Ekans", "Pikachu", "Sandshrew", "Nidoran F", "Nidoran M", "Clefairy", "Vulpix", "Jigglypuff", "Zubat", "Oddish", "Paras", "Venonat", "Diglett", "Meowth", "Psyduck", "Mankey", "Growlithe", "Poliwag", "Abra", "Machop", "Bellsprout", "Tentacool", "Geodude", "Ponyta", "Slowpoke", "Magnemite", "Farfetch'd", "Doduo", "Seel", "Grimer", "Shellder", "Gastly", "Onix", "Drowzee", "Krabby", "Voltorb", "Exeggcute", "Cubone", "Hitmonlee", "Hitmonchan", "Lickitung", "Koffing", "Rhyhorn", "Chansey", "Tangela", "Kangaskhan", "Horsea", "Goldeen", "Staryu", "Mr. Mime", "Scyther", "Jynx", "Electabuzz", "Magmar", "Pinsir", "Tauros", "Magikarp", "Lapras", "Ditto", "Eevee", "Porygon", "Omanyte", "Kabuto", "Aerodactyl", "Snorlax", "Dratini"];
+	var townList = ["Pallet Town", "Viridian City", "Pewter City", "Cerulean City", "Vermillion City", "Lavendar Town", "Celadon City", "Fuchsia City", "Saffron City", "Cinnabar Island"];
+	var trainerList =["Beauty", "Biker", "Bird Keeper", "Blackbelt", "Boss", "Bug Catcher", "Burglar", "Champion", "Channeler", "Ace Trainer", "Cue Ball", "Engineer", "Fisherman", "Gambler", "Gentleman", "Hiker", "Camper", "Juggler", "Lass", "Gym Leader", "PokeManiac", "Psychic", "Rival", "Rocker", "Team Rocket Member", "Sailor", "Scientist", "Super Nerd", "Swimmer", "Tamer", "Youngster"];
+	var natureList = ["Hardy", "Lonely", "Brave", "Adamant", "Naughty", "Bold", "Docile", "Relaxed", "Impish", "Lax", "Timid", "Hasty", "Serious", "Jolly", "Naive", "Modest", "Mild", "Quiet", "Bashful", "Rash", "Calm", "Gentle", "Sassy", "Careful", "Quirky"];
+	function getRandomIntInclusive(min, max) {
+		min = Math.ceil(min);
+		max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+	
+	function generate() {
+		starterPokemon = "Your starter pokemon is a " + pokemonList[getRandomIntInclusive(0,73)] + ".";
+		startingTown = "Your hometown is " + townList[getRandomIntInclusive(0,9)] + ".";
+		trainerGoal = "You aim to become a " + trainerList[getRandomIntInclusive(0,30)] + ".";
+		document.getElementById("startTown").innerHTML = startingTown;
+		document.getElementById("startPoke").innerHTML = starterPokemon;
+		document.getElementById("endGoal").innerHTML = trainerGoal;
+		starterNature = "Its nature is " + natureList[getRandomIntInclusive(0,24)] + ".";
+		document.getElementById("startNat").innerHTML = starterNature;
+	}
+	
+</script>
+</head>
+<body>
+<h1 id = "title">What Kind of Trainer Are You?</h1>
+<hr>
+<div id = "story">
+<p id = "startTown">Generate</p>
+<p id = "startPoke">your</p>
+<p id = "startNat">Pokemon</p>
+<p id = "endGoal">story!</p>
+<button type="button" onclick="generate()">Generate</button>
+</div>
+</body>
+</html>
